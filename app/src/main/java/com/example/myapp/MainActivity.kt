@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -13,26 +14,36 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val listView = findViewById<ListView>(R.id.listView)
-        val userData: EditText = findViewById(R.id.user_data)
+
+        val userLogin: EditText = findViewById(R.id.user_login)
+        val userPassword: EditText = findViewById(R.id.user_password)
+        val userMail: EditText = findViewById(R.id.user_email)
         val button: Button = findViewById(R.id.button)
+        val linkToAuth: TextView = findViewById(R.id.link_to_auth)
 
-        val todos: MutableList<String> = mutableListOf()
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, todos)
-        listView.adapter = adapter
-        
-        listView.setOnItemClickListener { adapterView, view, i, l ->
-            val text = listView.getItemAtPosition(i).toString()
-            adapter.remove(text)
-
-            Toast.makeText(this,"Мы удалили: $text", Toast.LENGTH_LONG).show()
+        linkToAuth.setOnClickListener{
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
         }
 
         button.setOnClickListener{
-            val text = userData.text.toString().trim()
-            if (text != "")
-                adapter.insert(text, 0)
+            val login = userLogin.text.toString().trim()
+            val email = userMail.text.toString().trim()
+            val pass = userPassword.text.toString().trim()
 
+            if (login == "" || email == "" || pass =="")
+                Toast.makeText(this,"Не все поля заполнены", Toast.LENGTH_LONG).show()
+            else{
+                val user = User(login, email, pass)
+
+                val db = Dbhelper(this, null)
+                db.addUser(user)
+                Toast.makeText(this,"Пользователь $login добавлен", Toast.LENGTH_LONG).show()
+
+                userLogin.text.clear()
+                userMail.text.clear()
+                userPassword.text.clear()
+            }
         }
     }
 }
