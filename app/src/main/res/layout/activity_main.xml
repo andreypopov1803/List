@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/grey">
 
     <TextView
         android:id="@+id/main_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Список дел"
+        android:text="@string/list_of_business"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,13 +24,16 @@
 
     <EditText
         android:id="@+id/user_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="67dp"
         android:layout_marginTop="50dp"
+        android:autofillHints="name"
         android:ems="10"
-        android:hint="Введите текст:"
+        android:hint="@string/text"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColor="@color/gold"
+        android:textColorHint="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -38,15 +43,22 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить"
+        android:backgroundTint="@color/black"
+        android:text="@string/add"
+        android:textColor="@color/gold"
+        android:textColorHighlight="#FFEB3B"
+        android:textColorLink="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_data"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.057"
+        app:rippleColor="#BF0F0F"
+        app:strokeColor="@color/green" />
 
     <ListView
         android:id="@+id/listView"

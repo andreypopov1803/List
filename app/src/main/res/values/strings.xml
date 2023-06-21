@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My App</string>
+    <string name="hi"> Создайте аккаунт </string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="text">Введите текст:</string>
+    <string name="list_of_business">Список дел:</string>
+    <string name="add">Добавить</string>
+    <string name="registration">Зарегистрироваться</string>
 </resources>
