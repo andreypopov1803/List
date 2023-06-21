@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/grey"
+    android:paddingBottom="20sp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_list_image"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/one" />
+
+    <TextView
+        android:id="@+id/item_list_title"
+        android:paddingHorizontal="20sp"
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:paddingVertical="15sp"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/item_list_desc"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="15sp"
+        android:textSize="17sp"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/item_list_price"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="20sp"
+        android:textSize="20sp"
+        android:paddingVertical="15sp"
+        android:gravity="end"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/item_list_button"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/gold"
+        android:text="@string/Watch"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/green" />
+</LinearLayout>

@@ -11,5 +11,8 @@
     <string name="autorization">Autorization</string>
     <string name="autorizate">Autorize</string>
     <string name="EnterDates">Введите данные для входа</string>
+    <string name="Product">Товары</string>
+    <string name="Watch">Посмотреть</string>
+
 
 </resources>
