@@ -13,6 +13,8 @@
     <string name="EnterDates">Введите данные для входа</string>
     <string name="Product">Товары</string>
     <string name="Watch">Посмотреть</string>
+    <string name="Buy">Buy</string>
+
 
 
 </resources>
